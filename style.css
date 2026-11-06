@@ -793,3 +793,58 @@ body {
     object-position: center;
     display: block;
 }
+/* MOBILE HERO DESIGN */
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: auto;
+        padding: 25px 20px;
+    }
+
+    .hero-top {
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hero-number {
+        font-size: 10px;
+    }
+
+    .hero-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .hero-content {
+        width: 100%;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 11vw, 52px);
+        line-height: 1.05;
+    }
+
+    .hero-content h2 {
+        font-size: 17px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .hero-image {
+        width: 190px;
+        height: 230px;
+        margin: 0 auto;
+    }
+
+    .primary-button {
+        margin: 0 auto;
+    }
+}
