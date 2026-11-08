@@ -21,13 +21,22 @@
         <a href="#" class="logo">DR<span>.</span></a>
 
         <nav>
-            <a href="#about">About me</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            
+            <a href="#about"  data-en="About me"
+   data-sr="O meni">About me</a>
+            <a href="#skills" data-en="Skills" data-sr="Veštine">Skills</a>
+            <a href="#projects" data-en="Projects" data-sr="Projekti">Projects</a>
+            <a href="#contact" data-en="Contact" data-sr="Kontakt">Contact</a>
+            
         </nav>
-
-        <a href="#contact" class="nav-button">Contact Me</a>
+        <div>   
+        
+        <a href="#contact" class="nav-button"  data-en="Contact Me"
+   data-sr="Kontaktiraj me">>Contact Me</a>
+   <button id="languageToggle" class="language-btn">
+                    EN
+                </button>
+        </div>
     </header>
 
     <main class="container">
@@ -37,32 +46,52 @@
             <article class="card hero reveal">
     <div class="hero-top">
         <span class="availability">
-            <span class="status-dot"></span>
-            Available for opportunities
-        </span>
+    <span class="status-dot"></span>
+
+    <span data-en="Open to work opportunities"
+          data-sr="Dostupan za poslovne prilike">
+        Open to work opportunities
+    </span>
+</span>
         <span class="hero-number">01 / PORTFOLIO</span>
     </div>
 
     <div class="hero-layout">
 
         <div class="hero-content">
-            <p class="eyebrow">Hello, I'm</p>
+            <p class="eyebrow"
+   data-en="Hello, I'm"
+   data-sr="Zdravo, ja sam">
+   Hello, I'm
+</p>
 
-            <h1>Dušan<br><span>Ristić</span></h1>
+            <h1>
+    <span class="first-name"
+          data-en="Dusan"
+          data-sr="Dušan">Dusan</span>
+    <br>
+    <span class="surname"
+          data-en="Ristic"
+          data-sr="Ristić">Ristic</span>
+            </h1>
 
             <h2>
                 <span id="typing">Junior .NET Developer</span>
                 <span class="cursor">|</span>
             </h2>
 
-            <p class="hero-description">
-                Electrical Engineering Student | Aspiring Software Engineer
+            <p class="hero-description"
+            data-en="| Aspiring Software EngineerFourth-year <br> | Electrical Engineering student <br><br> I build my programming skills through continuous learning, practical projects, and solving real-world problems. <br><br><b>Currently looking for an opportunity to start my professional career as a Junior .NET Developer.</b>"
+            data-sr="| Student četvrte godine Elektrotehnike (smer računarstva i informatike) <br> | Budući softverski inženjer <br><br> Razvijam svoje programerske veštine kroz kontinuirano učenje, praktične projekte i rešavanje problema iz stvarnog sveta. <br><br><b>Trenutno tražim priliku da započnem svoju profesionalnu karijeru kao Junior .NET Developer.</b>">
+                Fourth-year Electrical Engineering student | Aspiring Software Engineer
                 <br><br>
-                I develop my programming skills through continuous learning,
-                hands-on projects, and solving real-world problems.
+                I build my programming skills through continuous learning, practical projects, and solving real-world problems.
+                <br><br><b>Currently looking for an opportunity to start my professional career as a Junior .NET Developer.</b> 
             </p>
 
-            <a href="#projects" class="primary-button">
+            <a href="#projects" class="primary-button"
+            data-en="Explore my projects"
+            data-sr="Istraži moje projekte">
                 Explore my projects <span>↗</span>
             </a>
         </div>
@@ -79,46 +108,69 @@
             <!-- ABOUT -->
             <article class="card about reveal" id="about">
                 <div class="card-heading">
-                    <span class="card-label">02 / ABOUT ME</span>
+                    <span class="card-label" data-en="02 / ABOUT ME" data-sr="02 / O MENI"></span>
                     <span class="card-icon">✦</span>
                 </div>
 
-                <h2>Learning. Building.<br><span>Improving.</span></h2>
+                <h2>
+                    <span data-en="Learning.Building." data-sr="Učim.Stvaram.">Learning.Building.</span>
+                    <br>
+                     <span class="improving" data-en="Improving." data-sr="Napredujem.">Improving.</span>
+                    </h2>
 
-                <p>
-                    I am a student at the Faculty of Electronic Engineering in Niš with an interest in software development.
-                    I am currently learning C#, .NET, and SQL Server, with the goal of becoming a Junior .NET Developer.
+                <p 
+                data-en="I am a fourth-year student at the Faculty of Electronic Engineering, University of Niš, with a strong interest in software development.
+My main focus is C# and .NET development. I have been developing my programming knowledge through practical exercises and personal projects, learning object-oriented programming, collections, lambda expressions, and LINQ.
+I also have experience with SQL Server fundamentals and basic web technologies such as HTML, CSS, and JavaScript.
+I enjoy learning new technologies, solving programming challenges, and turning ideas into functional applications."
+                data-sr="Student sam četvrte godine Elektronskog fakulteta Univerziteta u Nišu, sa velikim interesovanjem za razvoj softvera.
+Moj glavni fokus je C# i .NET programiranje. Svoje znanje razvijam kroz praktične zadatke i samostalne projekte, učeći objektno orijentisano programiranje, kolekcije, lambda izraze i LINQ.
+Takođe poznajem osnove SQL Server-a i osnovne web tehnologije kao što su HTML, CSS i JavaScript.
+Uživam u učenju novih tehnologija, rešavanju programerskih problema i pretvaranju ideja u funkcionalne aplikacije.">
+                    I am a fourth-year student at the Faculty of Electronic Engineering, University of Niš, with a strong interest in software development.
+My main focus is C# and .NET development. I have been developing my programming knowledge through practical exercises and personal projects, learning object-oriented programming, collections, lambda expressions, and LINQ.
+I also have experience with SQL Server fundamentals and basic web technologies such as HTML, CSS, and JavaScript.
+I enjoy learning new technologies, solving programming challenges, and turning ideas into functional applications.
                 </p>
 
                 <div class="about-footer">
-                    <span>📍 Niš, Serbia</span>
-                    <span>💻 Software Development</span>
+                    <span data-en="📍 Niš, Serbia" data-sr="📍 Niš, Srbija">📍 Niš, Serbia</span>
+                    <span data-en="💻 Software Development" data-sr="💻 Razvoj softvera">💻 Software Development</span>
                 </div>
             </article>
 
             <!-- SKILLS -->
             <article class="card skills reveal" id="skills">
                 <div class="card-heading">
-                    <span class="card-label">03 / SKILLS</span>
+                    <span class="card-label" data-en="03 / SKILLS" data-sr="03 / VEŠTINE">03 / SKILLS</span>
                     <span class="card-icon">⌘</span>
                 </div>
 
-                <h2>Technologies I'm Learning</h2>
+                <h2 data-en="Technologies I'm Learning" data-sr="Tehnologije kojima se bavim">Technologies I'm Learning</h2>
 
                 <div class="skills-list">
                     <div class="skill">
                         <span class="skill-icon">C#</span>
                         <div>
                             <strong>C#</strong>
-                            <small>OOP, LINQ, Programming Fundamentals</small>
+                            <small
+                            data-en="OOP, LINQ, Programming Fundamentals"
+                            data-sr="OOP, LINQ, Osnove programiranja">>OOP, LINQ, Programming Fundamentals</small>
+                            <div class="skill-progress">
+                            <div class="progress-bar" style="--progress: 90%"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="skill">
-                        <span class="skill-icon">.N</span>
+                        <span class="skill-icon">.NET</span>
                         <div>
                             <strong>.NET</strong>
-                            <small>.NET Development Fundamentals</small>
+                            <small data-en=".NET Development Fundamentals"
+                            data-sr="Osnove .Net programiranja">.NET Development Fundamentals</small>
+                            <div class="skill-progress">
+                            <div class="progress-bar" style="--progress: 80%"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -126,7 +178,11 @@
                         <span class="skill-icon">SQL</span>
                         <div>
                             <strong>SQL Server</strong>
-                            <small>Databases and Queries</small>
+                            <small data-en="Databases, Queries, Tables and Data Types"
+                            data-sr="Baze podataka, Upiti, Tabele i tipovi podataka">Databases, Queries, Tables and Data Types</small>
+                            <div class="skill-progress">
+                            <div class="progress-bar" style="--progress: 85%"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -134,7 +190,32 @@
                         <span class="skill-icon">WEB</span>
                         <div>
                             <strong>HTML / CSS / JS</strong>
-                            <small>Web Development Fundamentals</small>
+                            <small data-en="HTML, CSS , JavaScript , Responsive Web Design, Web Development Fundamentals"
+                            data-sr="HTML, CSS , JavaScript , Responzivni web dizajn, Osnove web programiranja">HTML, CSS , JavaScript , Responsive Web Design, Web Development Fundamentals</small>
+                            <div class="skill-progress">
+                            <div class="progress-bar" style="--progress: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-icon">Tools</span>
+                        <div>                           
+                            <small 
+                            data-en="Visual Studio, 
+                                    Visual Studio Code, 
+                                    SSMS, 
+                                    Git, 
+                                    GitHub"
+                            data-sr="Visual Studio, 
+                                    Visual Studio Code, 
+                                    SSMS, 
+                                    Git, 
+                                    GitHub">Visual Studio, 
+                                            Visual Studio Code, 
+                                            SSMS, 
+                                            Git, 
+                                            GitHub</small>
+                    
                         </div>
                     </div>
                 </div>
@@ -143,24 +224,24 @@
             <!-- PROJECTS -->
             <article class="card projects reveal" id="projects">
                 <div class="card-heading">
-                    <span class="card-label">04 / PROJECTS</span>
+                    <span class="card-label" data-en="04 / PROJECTS" data-sr="04 / PROJEKTI">04 / PROJECTS</span>
                     <span class="card-icon">↗</span>
                 </div>
 
-                <h2>My Projects</h2>
-                <p class="section-description">
+                <h2 data-en="My Projects" data-sr="Moji projekti">My Projects</h2>
+                <p class="section-description" data-en="Projects I'm working on and through which I'm developing my skills." data-sr="Projekti na kojima radim i kroz koje razvijam svoje veštine.">
                     Projects I'm working on and through which I'm developing my skills.
                 </p>
 
                 <div class="project-item">
                     <div class="project-top">
                         <span class="project-icon">🚗</span>
-                        <span class="project-status">In Progress</span>
+                        <span class="project-status" data-en="In Progress" data-sr="U izradi">In Progress</span>
                     </div>
-                    <h3>Car Service Management</h3>
-                    <p>
-                        Ideja za aplikaciju za upravljanje automobilima,
-                        mušterijama i servisnim evidencijama.
+                    <h3 data-en="Car Service Management" data-sr="">Upravljanje auto-servisom</h3>
+                    <p data-en="A personal project focused on developing a system for managing car service operations. <br><br>Planned functionality:<br>• User management<br>• Vehicle management<br>• Service order management<br>• Inventory management<br>• Reporting and analytics"
+                    data-sr="Samostalni projekat usmeren na razvoj sistema za upravljanje auto-servisom. <br><br>Planirane funkcionalnosti:<br>• Upravljanje korisnicima<br>• Upravljanje vozilima<br>• Upravljanje servisnim nalozima<br>• Upravljanje zalihama<br>• Izveštavanje i analitika">
+                        A personal project focused on developing a system for managing car service operations.
                     </p>
                     <div class="tags">
                         <span>C#</span>
@@ -172,13 +253,30 @@
                 <div class="project-item">
                     <div class="project-top">
                         <span class="project-icon">🌐</span>
-                        <span class="project-status">In Progress</span>
+                        <span class="project-status" data-en="In Progress" data-sr="U izradi">In Progress</span>
                     </div>
-                    <h3>Personal Portfolio</h3>
-                    <p>
-                        Personal website for showcasing my knowledge,
-                        projects, and experience.
+                    <h3 data-en="Personal Portfolio" data-sr="Licni Portfolio">Personal Portfolio</h3>
+                    <p data-en="A personal portfolio website designed to present my skills, projects, and development journey. <br><br>Planned functionality:<br>• Built with HTML, CSS, and JavaScript<br>• Responsive design<br>• Animated elements and interactive components<br>• English and Serbian language support<br>• Hosted using GitHub Pages<br>• Project showcase<br>• Skills and experience presentation<br>• Contact form"
+                    data-sr="Lični portfolio veb sajt dizajniran da predstavi moje veštine, projekte i razvojni put. <br><br>Planirane funkcionalnosti:<br>• Napravljen pomoću HTML-a, CSS-a i JavaScript-a <br>• Responzivni dizajn<br>• Animirani elementi i interaktivne komponente<br>• Podrška za engleski i srpski jezik<br>• Postavljen pomoću GitHub Pages platforme<br>• Prikaz projekata<br>• Predstavljanje veština i iskustva<br>• Kontakt forma">
+                       A personal portfolio website designed to present my skills, projects, and development journey.
                     </p>
+                    <a href="https://codewithdusan.github.io/portfolio/"
+                        target="_blank"
+                         rel="noopener noreferrer"
+                          class="project-link">
+
+                        <span class="project-link-text"
+                          data-en="Visit Website"
+                          data-sr="Poseti stranicu">
+                           Visit Website
+                          </span>
+
+                         <span class="project-link-hover"
+                        data-en="You're already on the website"
+                      data-sr="Već ste na web stranici">
+                            You're already on the website
+                         </span>
+                    </a>
                     <div class="tags">
                         <span>HTML</span>
                         <span>CSS</span>
@@ -203,17 +301,29 @@
             <!-- GOAL -->
             <article class="card goal reveal">
                 <div class="card-heading">
-                    <span class="card-label">06 / MY GOAL</span>
+                    <span class="card-label"
+                    data-en="06 / MY GOAL"
+                    data-sr="06 / MOJ CILJ">06 / MY GOAL</span>
                     <span class="card-icon">↗</span>
                 </div>
 
                 <div>
                     <p class="eyebrow">Next Step</p>
                     <h2>Junior <span>.NET</span><br>Developer</h2>
-                    <p>
-                        My goal is to turn the acquired knowledge into practical
-                        experience, develop quality applications, and become
-                        part of a professional development team.
+                    <p 
+                    data-en="My primary career goal is to start my professional journey as a Junior .NET Developer, as C# and .NET are my main areas of interest.
+However, I am also open to other positions that match my current knowledge and skills. I am highly motivated to learn new programming languages, technologies, and skills whenever needed.
+I am genuinely passionate about software development and see it as a lifelong career. I am eager to continuously improve, take on new challenges, and grow both professionally and personally."
+                    data-sr="Moj primarni cilj je da započnem svoju profesionalnu karijeru kao Junior .NET Developer, jer su C# i .NET oblasti koje me najviše interesuju.
+
+Ipak, otvoren sam i za druge pozicije koje odgovaraju mom trenutnom znanju i veštinama. Veoma sam motivisan da učim nove programske jezike, tehnologije i stičem nove veštine kad god je to potrebno.
+
+Iskreno sam posvećen razvoju softvera i ovu profesiju vidim kao svoj životni poziv. Želim kontinuirano da napredujem, prihvatam nove izazove i razvijam se kako profesionalno, tako i lično.">
+            My primary career goal is to start my professional journey as a Junior .NET Developer, as C# and .NET are my main areas of interest.
+
+However, I am also open to other positions that match my current knowledge and skills. I am highly motivated to learn new programming languages, technologies, and skills whenever needed.
+
+I am genuinely passionate about software development and see it as a lifelong career. I am eager to continuously improve, take on new challenges, and grow both professionally and personally.
                     </p>
                 </div>
             </article>
