@@ -235,6 +235,9 @@ body {
     grid-column: span 2;
     grid-row: span 2;
     min-height: 410px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background:
         radial-gradient(
             circle at 80% 30%,
@@ -2388,7 +2391,7 @@ html[data-theme="light"] .logo {
 }
 /* NAVBAR BUTTONS - SAME HEIGHT */
 
-.navbar .contact-link,
+.navbar .nav-button,
 .navbar .language-btn,
 .navbar .theme-btn {
     height: 42px;
@@ -2411,3 +2414,103 @@ html[data-theme="light"] .logo {
     padding-top: 0;
     padding-bottom: 0;
 }
+html[data-theme="light"] .nav-button {
+    color: #171821 !important;
+}
+
+/* =========================
+   CUSTOM 404 PAGE
+========================= */
+
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 38, 56, 0.12),
+            transparent 45%
+        ),
+        var(--background);
+    text-align: center;
+}
+
+.error-container {
+    max-width: 650px;
+    width: 100%;
+}
+
+.error-logo {
+    color: var(--red);
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.error-code {
+    font-size: clamp(120px, 25vw, 220px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -12px;
+    color: var(--red);
+    text-shadow: 0 0 50px rgba(255, 38, 56, 0.25);
+    animation: errorFloat 3s ease-in-out infinite;
+}
+
+.error-container h1 {
+    font-size: clamp(22px, 4vw, 32px);
+    margin-top: 25px;
+}
+
+.error-container p {
+    color: var(--gray);
+    max-width: 430px;
+    margin: 15px auto 25px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.error-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 22px;
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.error-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(255, 38, 56, 0.4);
+}
+
+.error-footer {
+    margin-top: 70px;
+    color: var(--gray);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.error-footer span {
+    color: var(--red);
+}
+
+@keyframes errorFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
