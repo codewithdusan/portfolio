@@ -4,8 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lični portfolio i CV Dušana Ristića – Junior .NET Developer.">
     <title>Dušan Ristić | Portfolio</title>
+    
+<meta name="description" content="Dušan Ristić – Junior .NET Developer. C#, .NET, SQL Server and software development portfolio.">
+
+<meta name="author" content="Dušan Ristić">
+
+<meta name="keywords" content="Dušan Ristić, Junior .NET Developer, C#, .NET, SQL Server, Portfolio">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dušan Ristić | Junior .NET Developer">
+<meta property="og:description" content="Explore my portfolio, projects, technical skills and journey in software development.">
+<meta property="og:url" content="https://codewithdusan.github.io/portfolio/">
+<meta property="og:image"
+      content="https://codewithdusan.github.io/portfolio/preview.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Dušan Ristić | Junior .NET Developer">
+
+<meta name="twitter:description"
+      content="Explore my portfolio and software development projects.">
+
+<meta name="twitter:image"
+      content="https://codewithdusan.github.io/portfolio/preview.png">
+
+<meta name="theme-color" content="#080707">
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +43,24 @@
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
+    <!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="loader-logo">DR<span>.</span></div>
 
+        <div class="loader-line">
+            <div class="loader-progress"></div>
+        </div>
+
+        <p>INITIALIZING PORTFOLIO<span class="loading-dots">...</span></p>
+    </div>
+</div>
+    <button id="backToTop" aria-label="Back to top">
+    ↑
+    </button>   
+   <div id="scrollTube">
+    <div id="scrollProgress"></div>
+    </div>
     <div class="background-glow glow-one"></div>
     <div class="background-glow glow-two"></div>
 
@@ -21,14 +68,35 @@
         <a href="#" class="logo">DR<span>.</span></a>
 
         <nav>
-            
-            <a href="#about"  data-en="About me"
-   data-sr="O meni">About me</a>
-            <a href="#skills" data-en="Skills" data-sr="Veštine">Skills</a>
-            <a href="#projects" data-en="Projects" data-sr="Projekti">Projects</a>
-            <a href="#contact" data-en="Contact" data-sr="Kontakt">Contact</a>
-            
-        </nav>
+    <a href="#about" data-en="About me" data-sr="O meni">About me</a>
+
+    <a href="#skills" data-en="Skills" data-sr="Veštine">Skills</a>
+
+    <a href="#projects" data-en="Projects" data-sr="Projekti">Projects</a>
+
+    <a href="#education" data-en="Education" data-sr="Obrazovanje">Education</a>
+
+    <a href="#experience" data-en="Experience" data-sr="Radno iskustvo">Experience</a>
+
+    <a href="#contact" data-en="Contact" data-sr="Kontakt">Contact</a>
+</nav>
+
+
+<a href="CV/DusanCV-EN.pdf"
+   id="downloadCV"
+   download="Dusan-Ristic-CV-EN.pdf"
+   class="download-cv nav-download">
+
+    <span data-en="Download CV"
+          data-sr="Preuzmi CV">
+        Download CV
+    </span>
+
+    <span class="download-icon">↓</span>
+
+</a>
+
+
         <div>   
         
         <a href="#contact" class="nav-button"  data-en="Contact Me"
@@ -248,6 +316,16 @@ I enjoy learning new technologies, solving programming challenges, and turning i
                         <span>.NET</span>
                         <span>SQL Server</span>
                     </div>
+                    <a href="#" class="github-project-link" aria-label="Car Service Management on GitHub">
+                        <span class="github-project-icon">
+                             <svg viewBox="0 0 24 24" aria-hidden="true">
+                             <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.62 5.24-5.11 5.51.4.35.75 1.02.75 2.06v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+                            </svg>
+                        </span>
+                        <span data-en="View on GitHub" data-sr="Pogledaj na GitHub-u">
+                             View on GitHub
+                        </span>
+                        </a>
                 </div>
 
                 <div class="project-item">
@@ -260,22 +338,21 @@ I enjoy learning new technologies, solving programming challenges, and turning i
                     data-sr="Lični portfolio veb sajt dizajniran da predstavi moje veštine, projekte i razvojni put. <br><br>Planirane funkcionalnosti:<br>• Napravljen pomoću HTML-a, CSS-a i JavaScript-a <br>• Responzivni dizajn<br>• Animirani elementi i interaktivne komponente<br>• Podrška za engleski i srpski jezik<br>• Postavljen pomoću GitHub Pages platforme<br>• Prikaz projekata<br>• Predstavljanje veština i iskustva<br>• Kontakt forma">
                        A personal portfolio website designed to present my skills, projects, and development journey.
                     </p>
-                    <a href="https://codewithdusan.github.io/portfolio/"
+                    <a href="https://github.com/codewithdusan/portfolio"
                         target="_blank"
-                         rel="noopener noreferrer"
-                          class="project-link">
+                        rel="noopener noreferrer"
+                        class="github-project-link">
 
-                        <span class="project-link-text"
-                          data-en="Visit Website"
-                          data-sr="Poseti stranicu">
-                           Visit Website
-                          </span>
+                        <span class="github-project-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.62 5.24-5.11 5.51.4.35.75 1.02.75 2.06v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+                            </svg>
+                        </span>
 
-                         <span class="project-link-hover"
-                        data-en="You're already on the website"
-                      data-sr="Već ste na web stranici">
-                            You're already on the website
-                         </span>
+                         <span data-en="View Source Code"
+                         data-sr="Pogledaj izvorni kod">
+                          View Source Code
+                        </span>
                     </a>
                     <div class="tags">
                         <span>HTML</span>
@@ -286,17 +363,304 @@ I enjoy learning new technologies, solving programming challenges, and turning i
             </article>
 
             <!-- EDUCATION -->
-            <article class="card education reveal">
+            <article class="card education reveal" id="education">
                 <div class="card-heading">
-                    <span class="card-label">05 / EDUCATION</span>
+                    <span class="card-label" data-en="05 / EDUCATION " data-sr="05 / OBRAZOVANJE">05 / EDUCATION</span>
                     <span class="card-icon">✎</span>
                 </div>
 
                 <div class="education-icon">🎓</div>
-                <h2>Faculty of Electronic Engineering</h2>
-                <p>University of Nis</p>
+                <h2 data-en="Faculty of Electronic Engineering – University of Niš" data-sr="Elektronski fakultet – Univerzitet u Nišu">Faculty of Electronic Engineering</h2>
+                <p data-en="Undergraduate Academic Studies" data-sr="Osnovne akademske studije">University of Nis</p>
+                <p data-en="<b>Department of Computer Engineering and Informatics</b>" data-sr="<b>Smer – Računarstvo i informatika</b>"></p>
+                <p data-en="2022. – Present | Fourth-Year Student" data-sr="2022. – Danas | Četvrta godina studija"></p>
+                <br><br>
+                <h2 data-en="EUDUKA – Private Education Center"
+                data-sr="EUDUKA – Privatna škola">
+                    EUDUKA – Private Education Center
+                </h2>
+                    <p data-en="Graphic Design Course"
+                        data-sr="Kurs grafičkog dizajna">
+                            Graphic Design Course
+                    </p>
+                    <p>2022.</p>
+                    <div class="experience-programs">
+            <span>Adobe Photoshop</span>
+            <span>Adobe Illustrator</span>
+        </div>
+                        <div class="experience-hover">
+
+    <button class="experience-trigger">
+        <span data-en="Practical Experience"
+              data-sr="Praktično iskustvo">
+            Practical Experience
+        </span>
+        <span class="experience-arrow">←</span>
+    </button>
+
+    <div class="experience-details">
+
+        <p data-en="Practical experience in graphic design, including:"
+           data-sr="Praktično iskustvo u grafičkom dizajnu, uključujući:">
+            Practical experience in graphic design, including:
+        </p>
+
+        <ul>
+            <li data-en="Designing custom logos and visual identities for businesses."
+                data-sr="Izrada logotipa i vizuelnih identiteta za firme.">
+                Designing custom logos and visual identities for businesses.
+            </li>
+
+            <li data-en="Creating personalized product labels and stickers."
+                data-sr="Izrada personalizovanih nalepnica i etiketa za proizvode.">
+                Creating personalized product labels and stickers.
+            </li>
+
+            <li data-en="Designing business cards and promotional materials."
+                data-sr="Dizajn vizitkarti i promotivnih materijala.">
+                Designing business cards and promotional materials.
+            </li>
+
+            <li data-en="Creating posters, flyers and other print materials."
+                data-sr="Izrada postera, flajera i drugih štampanih materijala.">
+                Creating posters, flyers and other print materials.
+            </li>
+        </ul>
+    </div>
+</div>
+                        <br><br>
+                <h2 data-en="„Bora Stanković“ Grammar School – Niš" data-sr="Gimnazija „Bora Stanković“ – Niš"></h2>
+                <p data-en="Science and Mathematics Track" data-sr="Prirodno-matematički smer"></p>
+                <p data-en="2014. – 2018." data-sr="2014. – 2018."></p>
+                <br>
                 <span class="education-badge">Student</span>
+                <div class="education-item">
+    
+    
+</div>
+
             </article>
+
+<article class="card work-experience reveal" id="experience">
+
+    <div class="section-heading">
+        <span class="card-label" data-en="07 / EXPERIENCE" data-sr="07 / ISKUSTVO">07 / EXPERIENCE</span>
+        <h2 data-en="Work Experience"
+            data-sr="Radno iskustvo">
+            Work Experience
+        </h2>
+    </div>
+
+    <div class="work-item">
+        <div class="work-icon">⚡</div>
+        <div class="work-content">
+            <h3>Electrical Installation Worker</h3>
+            <span class="work-date">2019 – 2021</span>
+            <p class="work-location" data-en="Tilburg, Netherlands" data-sr="Tilburg, Holandija">Tilburg, Netherlands</p>
+            <p data-en="Installation of electrical wiring and electrical systems in residential buildings."
+               data-sr="Uvođenje električnih instalacija i postavljanje električnih sistema u stambenim objektima.">
+                Installation of electrical wiring and electrical systems in residential buildings.
+            </p>
+        </div>
+    </div>
+
+    <div class="work-item">
+        <div class="work-icon">🎨</div>
+        <div class="work-content">
+            <h3>Graphic Designer – Inscape</h3>
+            <span class="work-date" data-en="2022 · 3 months" data-sr="2022 · 3 meseci">2022 · 3 months</span>
+            <p class="work-location" data-en="Belgrade, Serbia" data-sr="Beograd, Srbija">Belgrade, Serbia</p>
+            <p data-en="Worked on graphic design and the creation of visual materials."
+               data-sr="Bavio sam se grafičkim dizajnom i izradom različitih vizuelnih materijala.">
+                Worked on graphic design and the creation of visual materials.
+            </p>
+        </div>
+    </div>
+
+    <div class="work-item">
+        <div class="work-icon">💻</div>
+        <div class="work-content">
+            <h3>Junior Frontend Developer – MEGA Computer Engineering</h3>
+            <span class="work-date"data-en="2022 · 9 months" data-sr="2022 · 9 meseci">2022 · 9 months</span>
+            <p class="work-location" data-en="Belgrade, Serbia" data-sr="Beograd, Srbija">Belgrade, Serbia</p>
+            <p data-en="Worked as a Junior Frontend Developer, gaining practical experience in frontend development."
+               data-sr="Radio sam kao Junior Frontend Developer, stičući praktično iskustvo u razvoju korisničkog interfejsa.">
+                Worked as a Junior Frontend Developer, gaining practical experience in frontend development.
+            </p>
+        </div>
+    </div>
+
+</article>
+<article class="card journey reveal" id="journey">
+
+    <div class="card-heading">
+        <span class="card-label"
+              data-en="MY JOURNEY"
+              data-sr="MOJ PUT">MY JOURNEY</span>
+        <span class="card-icon">⌛</span>
+    </div>
+
+    <h2 data-en="My Journey"
+        data-sr="Moj put">My Journey</h2>
+
+    <p class="journey-intro"
+       data-en="The milestones that shaped my personal and professional journey."
+       data-sr="Važni trenuci koji su oblikovali moj lični i profesionalni put.">
+        The milestones that shaped my personal and professional journey.
+    </p>
+
+    <div class="timeline">
+        <div class="timeline-track">
+
+            <!-- 2014 -->
+            <div class="timeline-event">
+                <div class="timeline-year">2014</div>
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+                    <span data-en="EDUCATION" data-sr="OBRAZOVANJE">EDUCATION</span>
+
+                    <h3 data-en="Bora Stanković Grammar School"
+                        data-sr="Gimnazija Bora Stanković">
+                        Bora Stanković Grammar School
+                    </h3>
+
+                    <p data-en="Science and Mathematics Track, Niš."
+                       data-sr="Prirodno-matematički smer, Niš.">
+                        Science and Mathematics Track, Niš.
+                    </p>
+
+                    <small data-en="2014 – 2018" data-sr="2014 – 2018">2014 – 2018</small>
+                </div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="timeline-event">
+                <div class="timeline-year">2019</div>
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+                    <span data-en="WORK EXPERIENCE" data-sr="RADNO ISKUSTVO">WORK EXPERIENCE</span>
+
+                    <h3 data-en="Electrical Installation Worker"
+                        data-sr="Radnik na elektroinstalacijama">
+                        Electrical Installation Worker
+                    </h3>
+
+                    <p data-en="Residential electrical installations in Tilburg, Netherlands."
+                       data-sr="Izvođenje elektroinstalacija u stambenim objektima u Tilburgu, Holandija.">
+                        Residential electrical installations in Tilburg, Netherlands.
+                    </p>
+
+                    <small data-en="2019 – 2021" data-sr="2019 – 2021">2019 – 2021</small>
+                </div>
+            </div>
+
+            <!-- 2020 -->
+            <div class="timeline-event">
+                <div class="timeline-year">2020</div>
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+                    <span data-en="EDUCATION" data-sr="OBRAZOVANJE">EDUCATION</span>
+
+                    <h3 data-en="Graphic Design Course"
+                        data-sr="Kurs grafičkog dizajna">
+                        Graphic Design Course
+                    </h3>
+
+                    <p data-en="EUDUKA – Adobe Photoshop and Adobe Illustrator."
+                       data-sr="EUDUKA – Adobe Photoshop i Adobe Illustrator.">
+                        EUDUKA – Adobe Photoshop and Adobe Illustrator.
+                    </p>
+
+                    <small data-en="2020" data-sr="2020">2020</small>
+                </div>
+            </div>
+
+            <!-- 2022 - Inscape -->
+            <div class="timeline-event">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+                    <span data-en="WORK EXPERIENCE" data-sr="RADNO ISKUSTVO">WORK EXPERIENCE</span>
+
+                    <h3>Graphic Designer – Inscape</h3>
+
+                    <p data-en="Professional graphic design experience in Belgrade."
+                       data-sr="Profesionalno iskustvo u grafičkom dizajnu u Beogradu.">
+                        Professional graphic design experience in Belgrade.
+                    </p>
+
+                    <small data-en="3 months" data-sr="3 meseca">3 months</small>
+                </div>
+            </div>
+
+            <!-- 2022 - MEGA -->
+            <div class="timeline-event">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+                    <span data-en="WORK EXPERIENCE" data-sr="RADNO ISKUSTVO">WORK EXPERIENCE</span>
+
+                    <h3>Junior Frontend Developer</h3>
+
+                    <p>MEGA Computer Engineering, Belgrade.</p>
+
+                    <small data-en="9 months" data-sr="9 meseci">9 months</small>
+                </div>
+            </div>
+
+            <!-- 2022 - Faculty -->
+            <div class="timeline-event">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+                    <span data-en="EDUCATION" data-sr="OBRAZOVANJE">EDUCATION</span>
+
+                    <h3 data-en="Faculty of Electronic Engineering"
+                        data-sr="Elektronski fakultet">
+                        Faculty of Electronic Engineering
+                    </h3>
+
+                    <p data-en="University of Niš – Undergraduate Academic Studies."
+                       data-sr="Univerzitet u Nišu – osnovne akademske studije.">
+                        University of Niš – Undergraduate Academic Studies.
+                    </p>
+
+                    <small data-en="2022 – Present" data-sr="2022 – Danas">2022 – Present</small>
+                </div>
+            </div>
+
+            <!-- 2026 -->
+            <div class="timeline-event">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+                    <span data-en="CURRENTLY" data-sr="TRENUTNO">CURRENTLY</span>
+
+                    <h3 data-en="Software Development"
+                        data-sr="Razvoj softvera">
+                        Software Development
+                    </h3>
+
+                    <p data-en="Focused on C#, .NET, SQL Server and Docker. Looking for my first professional opportunity as a Junior .NET Developer."
+                       data-sr="Fokusiran na C#, .NET, SQL Server i Docker. U potrazi za prvom profesionalnom prilikom kao Junior .NET Developer.">
+                        Focused on C#, .NET, SQL Server and Docker. Looking for my first professional opportunity as a Junior .NET Developer.
+                    </p>
+
+                    <small data-en="2026 – Present" data-sr="2026 – Danas">2026 – Present</small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</article>
 
             <!-- GOAL -->
             <article class="card goal reveal">
@@ -308,7 +672,7 @@ I enjoy learning new technologies, solving programming challenges, and turning i
                 </div>
 
                 <div>
-                    <p class="eyebrow">Next Step</p>
+                    <p class="eyebrow"data-en="Next Step" data-sr="Sledeći korak">Next Step</p>
                     <h2>Junior <span>.NET</span><br>Developer</h2>
                     <p 
                     data-en="My primary career goal is to start my professional journey as a Junior .NET Developer, as C# and .NET are my main areas of interest.
@@ -328,27 +692,332 @@ I am genuinely passionate about software development and see it as a lifelong ca
                 </div>
             </article>
 
+<article class="card languages reveal">
+
+    <div class="card-heading">
+        <span class="card-label"
+              data-en="LANGUAGES"
+              data-sr="JEZICI">
+            LANGUAGES
+        </span>
+        <span class="card-icon">🌐</span>
+    </div>
+
+    <h2 data-en="Languages"
+        data-sr="Jezici">
+        Languages
+    </h2>
+
+    <div class="language-item">
+        <div>
+            <strong data-en="Serbian" data-sr="Srpski">Serbian</strong>
+            <span data-en="Native" data-sr="Maternji">Native</span>
+        </div>
+        <div class="language-level">
+            <div class="language-fill native"></div>
+        </div>
+    </div>
+
+    <div class="language-item">
+        <div>
+            <strong data-en="English" data-sr="Engleski">English</strong>
+            <span data-en="Intermediate" data-sr="Srednji nivo">Intermediate</span>
+        </div>
+        <div class="language-level">
+            <div class="language-fill intermediate"></div>
+        </div>
+    </div>
+    
+<div class="language-item">
+    <div>
+        <strong data-en="German" data-sr="Nemački">German</strong>
+        <span data-en="Basic – A2 Certified"
+              data-sr="Osnovni nivo – A2 sertifikat">
+            Basic – A2 Certified
+        </span>
+    </div>
+
+    <div class="language-level">
+        <div class="language-fill german"></div>
+    </div>
+
+    <p class="language-certificate"
+       data-en="Goethe-Institut, Belgrade · 2018"
+       data-sr="Geteov institut, Beograd · 2018">
+        Goethe-Institut, Belgrade · 2018
+    </p>
+</div>
+
+
+</article>
+<article class="card personal-skills reveal">
+    <div class="card-heading">
+        <span class="card-label"
+              data-en="PERSONAL SKILLS"
+              data-sr="LIČNE VEŠTINE">
+            PERSONAL SKILLS
+        </span>
+        <span class="card-icon">🤝</span>
+    </div>
+
+    <h2 data-en="Personal Skills" data-sr="Lične veštine">
+        Personal Skills
+    </h2>
+
+    <div class="personal-skills-list">
+        <span data-en="Teamwork" data-sr="Timski rad">Teamwork</span>
+        <span data-en="Communication" data-sr="Komunikativnost">Communication</span>
+        <span data-en="Dedication" data-sr="Posvećenost">Dedication</span>
+        <span data-en="Motivation" data-sr="Motivisanost">Motivation</span>
+        <span data-en="Discipline" data-sr="Disciplina">Discipline</span>
+        <span data-en="Responsibility" data-sr="Odgovornost">Responsibility</span>
+        <span data-en="Adaptability" data-sr="Prilagodljivost">Adaptability</span>
+        <span data-en="Willingness to Learn" data-sr="Spremnost za učenje">
+            Willingness to Learn
+        </span>
+    </div>
+</article>
+<article class="card hobbies reveal">
+    <div class="card-heading">
+        <span class="card-label"
+              data-en="BEYOND WORK"
+              data-sr="VAN POSLA">
+            BEYOND WORK
+        </span>
+        <span class="card-icon">✦</span>
+    </div>
+
+    <h2 data-en="Interests & Hobbies"
+        data-sr="Interesovanja i hobiji">
+        Interests & Hobbies
+    </h2>
+
+    <div class="hobbies-grid">
+
+        <div class="hobby-item">
+            <span class="hobby-icon">💻</span>
+            <span data-en="Technology"
+                  data-sr="Tehnologija">Technology</span>
+        </div>
+
+        <div class="hobby-item">
+            <span class="hobby-icon">🏋️</span>
+            <span data-en="Fitness"
+                  data-sr="Fitnes">Fitness</span>
+        </div>
+
+        <div class="hobby-item">
+            <span class="hobby-icon">⚽</span>
+            <span data-en="Football"
+                  data-sr="Fudbal">Football</span>
+        </div>
+
+        <div class="hobby-item">
+            <span class="hobby-icon">🎨</span>
+            <span data-en="Graphic Design"
+                  data-sr="Grafički dizajn">Graphic Design</span>
+        </div>
+
+        <div class="hobby-item">
+            <span class="hobby-icon">🚗</span>
+            <span data-en="Automotive"
+                  data-sr="Automobili">Automotive</span>
+        </div>
+
+        <div class="hobby-item">
+            <span class="hobby-icon">📚</span>
+            <span data-en="Learning"
+                  data-sr="Učenje">Learning</span>
+        </div>
+
+    </div>
+
+    <p class="hobbies-footer"
+       data-en="Always curious. Always improving."
+       data-sr="Uvek radoznao. Uvek napredujem.">
+        Always curious. Always improving.
+    </p>
+</article>
             <!-- CONTACT -->
-            <article class="card contact reveal" id="contact">
-                <div class="card-heading">
-                    <span class="card-label">07 / CONTACT</span>
-                    <span class="card-icon">✉</span>
-                </div>
+            
+<article class="card contact reveal" id="contact">
+    <div class="card-heading">
+        <span class="card-label"
+              data-en="07 / CONTACT"
+              data-sr="07 / KONTAKT">07 / CONTACT</span>
+        <span class="card-icon">✉</span>
+    </div>
 
-                <h2>Let's<br><span>talk.</span></h2>
-                <p>I'm open to conversations, collaboration, and new opportunities.</p>
+    <h2>
+        <span data-en="Let's" data-sr="Hajde da">Let's</span><br>
+        <span data-en="talk." data-sr="razgovaramo.">talk.</span>
+    </h2>
 
-                <a href="mailto:tvoj-email@example.com" class="contact-link">
-                    Send me an email <span>↗</span>
-                </a>
+    <p data-en="I'm open to conversations, collaboration, and new opportunities."
+       data-sr="Otvoren sam za razgovore, saradnju i nove poslovne prilike.">
+        I'm open to conversations, collaboration, and new opportunities.
+    </p>
 
-                <div class="social-links">
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                </div>
-            </article>
+    <a href="mailto:dristic@elfak.rs" class="contact-link">
+        <span data-en="Send me an email"
+              data-sr="Pošalji mi email">Send me an email</span>
+        <span>↗</span>
+    </a>
 
-        </section>
+    <div class="social-links">
+        <a href="https://github.com/TV0J-USERNAME"
+           target="_blank" rel="noopener noreferrer"
+           data-en="GitHub ↗" data-sr="GitHub ↗">
+            GitHub ↗
+        </a>
+
+        <a href="https://www.linkedin.com/in/TV0J-PROFILE/"
+           target="_blank" rel="noopener noreferrer"
+           data-en="LinkedIn ↗" data-sr="LinkedIn ↗">
+            LinkedIn ↗
+        </a>
+
+        <a href="https://www.instagram.com/TV0J-USERNAME/"
+           target="_blank" rel="noopener noreferrer"
+           data-en="Instagram ↗" data-sr="Instagram ↗">
+            Instagram ↗
+        </a>
+    </div>
+</article>
+
+<article class="card learning reveal">
+    <div class="card-heading">
+        <span class="card-label"
+              data-en="MY DEVELOPMENT"
+              data-sr="MOJ RAZVOJ">
+            MY DEVELOPMENT
+        </span>
+        <span class="card-icon">⌘</span>
+    </div>
+
+    <h2 data-en="Currently Learning"
+        data-sr="Trenutno učim">
+        Currently Learning
+    </h2>
+
+    <p class="learning-description"
+       data-en="Continuously expanding my knowledge and exploring new technologies."
+       data-sr="Neprestano proširujem svoje znanje i istražujem nove tehnologije.">
+        Continuously expanding my knowledge and exploring new technologies.
+    </p>
+
+    <div class="learning-list">
+
+        <div class="learning-item">
+            <div class="learning-info">
+                <strong>C# & .NET</strong>
+                <span data-en="Continuous improvement"
+                      data-sr="Kontinuirano usavršavanje">
+                    Continuous improvement
+                </span>
+            </div>
+            <div class="learning-line">
+                <div class="learning-fill dotnet"></div>
+            </div>
+        </div>
+
+        <div class="learning-item">
+            <div class="learning-info">
+                <strong>SQL & Databases</strong>
+                <span data-en="Deepening knowledge"
+                      data-sr="Proširivanje znanja">
+                    Deepening knowledge
+                </span>
+            </div>
+            <div class="learning-line">
+                <div class="learning-fill database"></div>
+            </div>
+        </div>
+
+        <div class="learning-item">
+            <div class="learning-info">
+                <strong>Docker</strong>
+                <span data-en="Just started"
+                      data-sr="Tek započeto">
+                    Just started
+                </span>
+            </div>
+            <div class="learning-line">
+                <div class="learning-fill docker"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="learning-footer">
+        <span class="learning-status-dot"></span>
+        <span data-en="Always learning. Never standing still."
+              data-sr="Uvek učim. Nikada ne stojim u mestu.">
+            Always learning. Never standing still.
+        </span>
+    </div>
+</article>
+
+<!-- INTERACTIVE TERMINAL -->
+<article class="card terminal reveal" id="terminal">
+
+    <div class="card-heading">
+        <span class="card-label">08 / INTERACTIVE TERMINAL</span>
+        <span class="card-icon">&gt;_</span>
+    </div>
+
+    <h2 data-en="Explore My Portfolio"
+        data-sr="Istraži moj portfolio">
+        Explore My Portfolio
+    </h2>
+
+    <p class="section-description"
+       data-en="Interact with my personal terminal."
+       data-sr="Komuniciraj sa mojim personalnim terminalom.">
+        Interact with my personal terminal.
+    </p>
+
+    <div class="terminal-window">
+
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <span class="terminal-title">DUŠAN@PORTFOLIO: ~</span>
+        </div>
+
+        <div class="terminal-body">
+
+            <div id="terminalOutput">
+                <p class="terminal-welcome">
+                    Welcome to my portfolio terminal.
+                </p>
+                <p class="terminal-welcome">
+                    Type <span>help</span> to see available commands.
+                </p>
+            </div>
+
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">visitor@portfolio:~$</span>
+
+                <input
+                    type="text"
+                    id="terminalInput"
+                    placeholder="Type a command..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+            </div>
+
+        </div>
+    </div>
+
+</article>
+        
+</section>
 
         <footer class="footer">
             <p>© <span id="year"></span> Dušan Ristić</p>
@@ -357,5 +1026,6 @@ I am genuinely passionate about software development and see it as a lifelong ca
     </main>
 
     <script src="script.js"></script>
+    <div class="custom-cursor"></div>
 </body>
 </html>
