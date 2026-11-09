@@ -2513,4 +2513,72 @@ html[data-theme="light"] .nav-button {
         transform: translateY(-12px);
     }
 }
+/* 404 ARROW POINTER */
+
+.error-pointer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    z-index: 99999;
+    pointer-events: none;
+    transform: translate(-2px, -2px);
+    filter: drop-shadow(0 0 5px rgba(255, 38, 56, 0.6));
+}
+
+.error-pointer svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.error-page {
+    cursor: none;
+}
+
+.error-page a {
+    cursor: none;
+}
+.whatsapp-link:hover {
+    border-color: #25D366;
+    color: #25D366;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+}
+.whatsapp-link {
+    color: #ffffff !important;
+}
+/* LIGHT THEME - TERMINAL */
+
+html[data-theme="light"] .terminal-window {
+    background: #ffffff;
+    border-color: rgba(20, 20, 30, 0.15);
+}
+
+html[data-theme="light"] .terminal-header {
+    background: #f0f0f3;
+    border-bottom-color: rgba(20, 20, 30, 0.12);
+}
+
+html[data-theme="light"] .terminal-title {
+    color: #333333;
+}
+
+html[data-theme="light"] .terminal-welcome,
+html[data-theme="light"] .terminal-response {
+    color: #333333;
+}
+
+html[data-theme="light"] #terminalInput {
+    color: #171821 !important;
+}
+
+html[data-theme="light"] #terminalInput::placeholder {
+    color: #888888;
+}
+
+html[data-theme="light"] .terminal-prompt,
+html[data-theme="light"] .terminal-command {
+    color: #e51f35;
+}
 

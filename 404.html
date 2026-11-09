@@ -15,7 +15,6 @@
 
     <main class="error-container">
 
-
         <div class="error-code">404</div>
 
         <h1>Oops! Page not found.</h1>
@@ -25,15 +24,35 @@
             has been moved, or is temporarily unavailable.
         </p>
 
-        <a href="/portfolio/" class="error-button">
-            <span>←</span> Back to Home
-        </a>
+        <div class="error-button-wrapper">
+
+            <a href="https://codewithdusan.github.io/portfolio/" class="error-button">
+                <span>←</span> Back to Home
+            </a>
+
+        </div>
 
         <div class="error-footer">
             DUŠAN RISTIĆ <span> / </span> JUNIOR .NET DEVELOPER
         </div>
 
     </main>
+<div class="error-pointer">
+    <svg viewBox="0 0 32 32">
+        <path d="M3 2 L28 18 L17 20 L12 29 Z"
+              fill="#ff2638"
+              stroke="#ffffff"
+              stroke-width="1.2"
+              stroke-linejoin="round"/>
+    </svg>
+</div>
+<script>
+const pointer = document.querySelector(".error-pointer");
 
+document.addEventListener("mousemove", function(event) {
+    pointer.style.left = event.clientX + "px";
+    pointer.style.top = event.clientY + "px";
+});
+</script>
 </body>
 </html>
