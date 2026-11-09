@@ -2,12 +2,26 @@
 // =========================
 // EFEKAT KUCANJA TEKSTA
 // =========================
+// =========================
+// TYPING EFFECT
+// =========================
 
-const words = [
-    "Junior .NET Developer",
-    "C# Developer",
-    "Future Software Engineer"
-];
+// =========================
+// TYPING EFFECT
+// =========================
+
+const words = {
+    en: [
+        "Junior .NET Developer",
+        "C# Developer",
+        "Software Developer"
+    ],
+    sr: [
+        "Junior .NET Developer",
+        "C# Programer",
+        "Programer softvera"
+    ]
+};
 
 let wordIndex = 0;
 let letterIndex = 0;
@@ -16,13 +30,16 @@ let deleting = false;
 const typing = document.getElementById("typing");
 
 function typeEffect() {
-    const word = words[wordIndex];
+    if (!typing) return;
+
+    const currentWords = words[currentLanguage];
+    const word = currentWords[wordIndex];
 
     if (!deleting) {
         typing.textContent = word.substring(0, letterIndex + 1);
         letterIndex++;
 
-        if (letterIndex === word.length) {
+        if (letterIndex >= word.length) {
             deleting = true;
             setTimeout(typeEffect, 1600);
             return;
@@ -31,37 +48,14 @@ function typeEffect() {
         typing.textContent = word.substring(0, letterIndex - 1);
         letterIndex--;
 
-        if (letterIndex === 0) {
+        if (letterIndex <= 0) {
             deleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
+            wordIndex = (wordIndex + 1) % currentWords.length;
         }
     }
 
     setTimeout(typeEffect, deleting ? 40 : 85);
 }
-
-typeEffect();
-
-
-// =========================
-// ANIMACIJA POJAVLJIVANJA
-// =========================
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.12
-});
-
-document.querySelectorAll(".reveal").forEach((card) => {
-    observer.observe(card);
-});
-
 
 // =========================
 // AUTOMATSKA GODINA
@@ -85,6 +79,13 @@ function changeLanguage(language) {
     element.classList.add("language-animation");
     
 });
+    // TERMINAL PLACEHOLDER TRANSLATION
+    const terminalInput = document.getElementById("terminalInput");
+
+    if (terminalInput) {
+        terminalInput.placeholder =
+            terminalInput.dataset[language + "Placeholder"];
+    }
 const downloadCV = document.getElementById("downloadCV");
 
     if (downloadCV) {
@@ -120,6 +121,8 @@ const savedLanguage = localStorage.getItem("siteLanguage");
 if (savedLanguage) {
     changeLanguage(savedLanguage);
 }
+
+typeEffect();
 /* SCROLL PROGRESS BAR */
 
 const scrollProgress = document.getElementById("scrollProgress");
@@ -285,6 +288,7 @@ window.addEventListener("load", () => {
     }, 1500);
 });
 // =========================
+
 // INTERACTIVE TERMINAL
 // =========================
 
@@ -295,51 +299,82 @@ if (terminalInput && terminalOutput) {
 
     const commands = {
 
-        help: `
-Available commands:
-
+        help: {
+            en: `Available commands:
 about       - About me
 skills      - My technical skills
 projects    - My projects
 experience  - Work experience
 education   - Education
 contact     - Contact information
-clear       - Clear terminal
-        `,
+clear       - Clear terminal`,
 
-        about: `
-Name: Dušan Ristić
+            sr: `Dostupne komande:
+about       - O meni
+skills      - Moje veštine
+projects    - Moji projekti
+experience  - Radno iskustvo
+education   - Obrazovanje
+contact     - Kontakt informacije
+clear       - Obriši terminal`
+        },
+
+        about: {
+            en: `Name: Dušan Ristić
 Role: Junior .NET Developer
 Location: Serbia
 
 Passionate about software development,
-C#, .NET and continuous learning.
-        `,
+C#, .NET and continuous learning.`,
 
-        skills: `
-Technical Skills:
+            sr: `Ime: Dušan Ristić
+Pozicija: Junior .NET Developer
+Lokacija: Srbija
 
+Posvećen razvoju softvera,
+C#, .NET tehnologijama i kontinuiranom učenju.`
+        },
+
+        skills: {
+            en: `Technical Skills:
 C#              Learning
-.NET             Learning
-SQL Server       Learning
-HTML             Working knowledge
-CSS              Working knowledge
-JavaScript       Working knowledge
-Docker           Currently learning
-        `,
+.NET            Learning
+SQL Server      Learning
+HTML            Working knowledge
+CSS             Working knowledge
+JavaScript      Working knowledge
+Docker          Currently learning`,
 
-        projects: `
-My Projects:
+            sr: `Tehničke veštine:
+C#              Učenje
+.NET            Učenje
+SQL Server      Učenje
+HTML            Osnovno znanje
+CSS             Osnovno znanje
+JavaScript      Osnovno znanje
+Docker          Trenutno učim`
+        },
+
+        projects: {
+            en: `My Projects:
 
 1. Car Service Management
    C# | .NET | SQL Server
 
 2. Personal Developer Portfolio
-   HTML | CSS | JavaScript
-        `,
+   HTML | CSS | JavaScript`,
 
-        experience: `
-Work Experience:
+            sr: `Moji projekti:
+
+1. Sistem za upravljanje auto-servisom
+   C# | .NET | SQL Server
+
+2. Lični developerski portfolio
+   HTML | CSS | JavaScript`
+        },
+
+        experience: {
+            en: `Work Experience:
 
 2019 - 2021
 Electrical Installation Worker
@@ -352,11 +387,26 @@ Belgrade
 2022
 Junior Frontend Developer
 MEGA Computer Engineering
-Belgrade
-        `,
+Belgrade`,
 
-        education: `
-Education:
+            sr: `Radno iskustvo:
+
+2019 - 2021
+Radnik na elektroinstalacijama
+Tilburg, Holandija
+
+2022
+Grafički dizajner - Inscape
+Beograd
+
+2022
+Junior Frontend Developer
+MEGA Computer Engineering
+Beograd`
+        },
+
+        education: {
+            en: `Education:
 
 2014 - 2018
 Bora Stanković Grammar School
@@ -366,17 +416,34 @@ Graphic Design Course - EUDUKA
 
 2022 - Present
 Faculty of Electronic Engineering
-University of Niš
-        `,
+University of Niš`,
 
-        contact: `
-Email:
+            sr: `Obrazovanje:
+
+2014 - 2018
+Gimnazija Bora Stanković
+
+2020
+Kurs grafičkog dizajna - EUDUKA
+
+2022 - Danas
+Elektronski fakultet
+Univerzitet u Nišu`
+        },
+
+        contact: {
+            en: `Email:
 dristic@elfak.rs
 
 GitHub:
-github.com/codewithdusan
-        `
+github.com/codewithdusan`,
 
+            sr: `E-mail:
+dristic@elfak.rs
+
+GitHub:
+github.com/codewithdusan`
+        }
     };
 
     terminalInput.addEventListener("keydown", function(event) {
@@ -398,19 +465,70 @@ github.com/codewithdusan
         }
 
         else {
+
             const response = document.createElement("p");
             response.className = "terminal-response";
 
-            response.textContent = commands[command] || 
-                "Command not found. Type 'help' to see available commands.";
+            if (commands[command]) {
+                response.textContent = commands[command][currentLanguage];
+            }
+
+            else {
+                response.textContent = currentLanguage === "sr"
+                    ? "Nepoznata komanda. Ukucaj 'help' za dostupne komande."
+                    : "Command not found. Type 'help' to see available commands.";
+            }
 
             terminalOutput.appendChild(response);
         }
 
         terminalInput.value = "";
-
         terminalOutput.scrollTop = terminalOutput.scrollHeight;
 
     });
 
 }
+// =========================
+// SCROLL REVEAL ANIMATION
+// =========================
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.05
+});
+
+document.querySelectorAll(".reveal").forEach(card => {
+    revealObserver.observe(card);
+});
+// =========================
+// DARK / LIGHT THEME
+// =========================
+
+const themeToggle = document.getElementById("themeToggle");
+
+let currentTheme = localStorage.getItem("siteTheme") || "dark";
+
+function applyTheme(theme) {
+
+    document.documentElement.dataset.theme = theme;
+
+  themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
+
+    localStorage.setItem("siteTheme", theme);
+}
+
+applyTheme(currentTheme);
+
+themeToggle.addEventListener("click", () => {
+
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
+
+    applyTheme(currentTheme);
+
+});
