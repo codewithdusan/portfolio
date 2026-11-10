@@ -22,7 +22,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+}av
 
 html {
     scroll-behavior: smooth;
@@ -2743,8 +2743,10 @@ html[data-theme="light"] .loader-logo {
     }
 
     .mobile-side-nav a[href="#contact"]::before {
-        content: "✉";
-    }
+    content: "✉";
+    color: #ff5965 !important;
+    background: transparent !important;
+}
 
     .mobile-side-nav a::before {
         font-size: 21px;
