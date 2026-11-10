@@ -2693,7 +2693,7 @@ html[data-theme="light"] .loader-logo {
 
     padding: 12px 8px;
 
-    background: rgba(15, 10, 11, 0.92);
+    background: rgba(15, 10, 11, 0.33);
     border: 1px solid rgba(255, 38, 56, 0.3);
     border-radius: 16px;
 
@@ -2770,7 +2770,7 @@ html[data-theme="light"] .loader-logo {
 }
 
     html[data-theme="light"] .navbar .mobile-side-nav {
-        background: rgba(255, 255, 255, 0.94);
+        background: rgba(255, 255, 255, 0.33);
         border-color: rgba(229, 31, 53, 0.25);
     }
 }
@@ -2899,7 +2899,7 @@ html[data-theme="light"] .loader-logo {
     /* Svetla tema */
 
     html[data-theme="light"] .navbar .mobile-side-nav {
-        background: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.33);
     }
 }
 /* TABLET AND SMALL LAPTOP SCREENS */
