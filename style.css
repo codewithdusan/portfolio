@@ -2034,12 +2034,6 @@ html {
     letter-spacing: 3px;
     margin-top: 18px;
 }
-
-.loading-dots {
-    color: #ff2638;
-    animation: loadingDots 1s infinite;
-}
-
 @keyframes loaderFill {
     to {
         transform: scaleX(1);
