@@ -518,7 +518,22 @@ function applyTheme(theme) {
 
     document.documentElement.dataset.theme = theme;
 
-  themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
+    themeToggle.innerHTML = theme === "dark"
+        ? `<svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round">
+             <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5
+                      8.5 8.5 0 1 0 20.5 15.5Z"/>
+           </svg>`
+        : `<svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round">
+             <circle cx="12" cy="12" r="4"/>
+             <path d="M12 2v2 M12 20v2 M4.93 4.93l1.42 1.42
+                      M17.65 17.65l1.42 1.42 M2 12h2 M20 12h2
+                      M4.93 19.07l1.42-1.42
+                      M17.65 6.35l1.42-1.42"/>
+           </svg>`;
 
     localStorage.setItem("siteTheme", theme);
 }
@@ -532,3 +547,30 @@ themeToggle.addEventListener("click", () => {
     applyTheme(currentTheme);
 
 });
+// PREMEŠTANJE NAVBAR DUGMADI NA MALIM EKRANIMA
+
+const navbar = document.querySelector(".navbar");
+const mobileNav = document.querySelector(".mobile-side-nav");
+const extraControls = document.querySelector(".nav-extra-controls");
+const downloadCV = document.getElementById("downloadCV");
+
+const mobileBreakpoint = window.matchMedia("(max-width: 500px)");
+
+function moveNavbarControls() {
+
+    if (mobileBreakpoint.matches) {
+
+        mobileNav.appendChild(downloadCV);
+        mobileNav.appendChild(extraControls);
+
+    } else {
+
+        navbar.appendChild(downloadCV);
+        navbar.appendChild(extraControls);
+
+    }
+}
+
+moveNavbarControls();
+
+mobileBreakpoint.addEventListener("change", moveNavbarControls);

@@ -65,50 +65,58 @@
     <div class="background-glow glow-two"></div>
 
     <header class="navbar">
-        <a href="#" class="logo">DR<span>.</span></a>
+    <a href="#" class="logo">DR<span>.</span></a>
 
-        <nav>
-    <a href="#about" data-en="About me" data-sr="O meni">About me</a>
+    <nav class="mobile-side-nav">
+        <a href="#about" aria-label="About me" title="About me">
+            <span data-en="About me" data-sr="O meni">About me</span>
+        </a>
 
-    <a href="#skills" data-en="Skills" data-sr="Veštine">Skills</a>
+        <a href="#skills" aria-label="Skills" title="Skills">
+            <span data-en="Skills" data-sr="Veštine">Skills</span>
+        </a>
 
-    <a href="#projects" data-en="Projects" data-sr="Projekti">Projects</a>
+        <a href="#projects" aria-label="Projects" title="Projects">
+            <span data-en="Projects" data-sr="Projekti">Projects</span>
+        </a>
 
-    <a href="#education" data-en="Education" data-sr="Obrazovanje">Education</a>
+        <a href="#education" aria-label="Education" title="Education">
+            <span data-en="Education" data-sr="Obrazovanje">Education</span>
+        </a>
 
-    <a href="#experience" data-en="Experience" data-sr="Radno iskustvo">Experience</a>
+        <a href="#experience" aria-label="Experience" title="Experience">
+            <span data-en="Experience" data-sr="Radno iskustvo">Experience</span>
+        </a>
 
-    <a href="#contact" data-en="Contact" data-sr="Kontakt">Contact</a>
-</nav>
+        <a href="#contact" aria-label="Contact" title="Contact">
+            <span data-en="Contact" data-sr="Kontakt">Contact</span>
+        </a>
+    </nav>
 
+    <a href="CV/DusanCV-EN.pdf"
+       id="downloadCV"
+       download="Dusan-Ristic-CV-EN.pdf"
+       class="download-cv nav-download">
 
-<a href="CV/DusanCV-EN.pdf"
-   id="downloadCV"
-   download="Dusan-Ristic-CV-EN.pdf"
-   class="download-cv nav-download">
+        <span data-en="Download CV" data-sr="Preuzmi CV">
+            Download CV
+        </span>
 
-    <span data-en="Download CV"
-          data-sr="Preuzmi CV">
-        Download CV
-    </span>
+        <span class="download-icon">⇩</span>
+    </a>
 
-    <span class="download-icon">↓</span>
+    <div class="nav-extra-controls">
+        <button id="languageToggle" class="language-btn">
+            EN
+        </button>
 
-</a>
+        <button id="themeToggle"
+        class="theme-btn"
+        aria-label="Toggle theme">
+        </button>
 
-
-        <div>   
-        
-        <a href="#contact" class="nav-button"  data-en="Contact Me"
-   data-sr="Kontaktiraj me">>Contact Me</a>
-   <button id="languageToggle" class="language-btn">
-                    EN
-                </button>
-                <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
-    ☀️
-</button>
-        </div>
-    </header>
+    </div>
+</header>
 
     <main class="container">
         <section class="bento-grid">
@@ -124,7 +132,7 @@
         Open to work opportunities
     </span>
 </span>
-        <span class="hero-number">01 / PORTFOLIO</span>
+        <span class="hero-number" data-en="01 / PORTFOLIO" data-sr="01 / PROFIL">01 / PORTFOLIO</span>
     </div>
 
     <div class="hero-layout">
@@ -339,7 +347,7 @@ Uživam u učenju novih tehnologija, rešavanju programerskih izazova i pretvara
                         <span class="project-icon">🚗</span>
                         <span class="project-status" data-en="In Progress" data-sr="U izradi">In Progress</span>
                     </div>
-                    <h3 data-en="Car Service Management" data-sr="">Upravljanje auto-servisom</h3>
+                    <h3 data-en="Car Service Management" data-sr="Sistem za upravljanje auto-servisom">Upravljanje auto-servisom</h3>
                     <p data-en="A personal project focused on developing a system for managing car service operations. <br><br>Planned functionality:<br>• User management<br>• Vehicle management<br>• Service order management<br>• Inventory management<br>• Reporting and analytics"
                     data-sr="Samostalni projekat usmeren na razvoj sistema za upravljanje auto-servisom. <br><br>Planirane funkcionalnosti:<br>• Upravljanje korisnicima<br>• Upravljanje vozilima<br>• Upravljanje servisnim nalozima<br>• Upravljanje zalihama<br>• Izveštavanje i analitika">
                         A personal project focused on developing a system for managing car service operations.
@@ -477,7 +485,10 @@ Uživam u učenju novih tehnologija, rešavanju programerskih izazova i pretvara
 <article class="card work-experience reveal" id="experience">
 
     <div class="section-heading">
-        <span class="card-label" data-en="06 / EXPERIENCE" data-sr="06 / ISKUSTVO">06 / EXPERIENCE</span>
+        <div class="card-heading">
+            <span class="card-label" data-en="06 / EXPERIENCE" data-sr="06 / ISKUSTVO">06 / EXPERIENCE</span>
+            <span class="card-icon">⚡</span>
+        </div>
         <h2 data-en="Work Experience"
             data-sr="Radno iskustvo">
             Work Experience
@@ -595,9 +606,9 @@ Uživam u učenju novih tehnologija, rešavanju programerskih izazova i pretvara
                 </div>
             </div>
 
-            <!-- 2020 -->
+            <!-- 2022 -->
             <div class="timeline-event">
-                <div class="timeline-year">2020</div>
+                <div class="timeline-year">2022</div>
                 <div class="timeline-dot"></div>
 
                 <div class="timeline-card">
