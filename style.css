@@ -2917,13 +2917,18 @@ html[data-theme="light"] .loader-logo {
         box-sizing: border-box;
     }
 }
-.primary-button .button-arrow {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
+/* Kontakt ikonica – podrazumevano sakrivena */
+.navbar .mobile-side-nav .contact-menu-icon {
+    display: none !important;
 }
 
-.primary-button:hover .button-arrow {
-    transform: translate(3px, -3px);
+/* Ikonica se prikazuje samo u mobilnom meniju */
+@media (max-width: 930px) {
+    .navbar .mobile-side-nav .contact-menu-icon {
+        display: block !important;
+        width: 21px;
+        height: 21px;
+        color: #ff5965;
+        flex-shrink: 0;
+    }
 }
