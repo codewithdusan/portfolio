@@ -3356,3 +3356,72 @@ html[data-theme="light"] .loader-logo {
     }
 
 }
+
+/* WhatsApp chat - Light Mode */
+
+/* Glavni prozor */
+html[data-theme="light"] .chat-window {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #222222 !important;
+    border: 1px solid #dddddd !important;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Zaglavlje */
+html[data-theme="light"] .chat-window .chat-header {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #222222 !important;
+    border-bottom: 1px solid #eeeeee !important;
+}
+
+html[data-theme="light"] .chat-header h3,
+html[data-theme="light"] .chat-header span {
+    color: #222222 !important;
+}
+
+/* Avatar */
+html[data-theme="light"] .chat-avatar {
+    background: #ff2638 !important;
+    color: #ffffff !important;
+}
+
+/* Deo sa porukama */
+html[data-theme="light"] .chat-window .chat-body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
+
+/* Poruka */
+html[data-theme="light"] .chat-window .chat-message {
+    background: #f2f2f2 !important;
+    color: #222222 !important;
+}
+
+/* Donji deo za unos */
+html[data-theme="light"] .chat-window .chat-input-area {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-top: 1px solid #eeeeee !important;
+}
+
+/* Polje za unos */
+html[data-theme="light"] .chat-input-area input {
+    background: #f5f5f5 !important;
+    color: #222222 !important;
+    border: 1px solid #dddddd !important;
+}
+
+html[data-theme="light"] .chat-input-area input::placeholder {
+    color: #888888 !important;
+}
+
+/* Dugme za slanje i zatvaranje */
+html[data-theme="light"] .chat-window button {
+    color: #222222 !important;
+}
+
+html[data-theme="light"] .chat-close {
+    color: #222222 !important;
+}
