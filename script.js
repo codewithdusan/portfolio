@@ -645,6 +645,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
 // =================================
 // 3D CUBE - SCROLL ANIMATION
 // =================================
@@ -676,6 +677,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }, { passive: true });
 
+
     // Animacija kocke
     function animateCube(timestamp) {
 
@@ -698,14 +700,17 @@ document.addEventListener("DOMContentLoaded", function () {
         rotationX += speedX * deltaTime;
         rotationY += speedY * deltaTime;
 
+        // Rotacija obe kocke u suprotnim smerovima
         techCubes.forEach((techCube, index) => {
 
-    const direction = index === 0 ? 1 : -1;
+            const direction = index === 0 ? 1 : -1;
 
-    techCube.style.transform =
-        `rotateX(${rotationX}deg) rotateY(${rotationY * direction}deg)`;
+            techCube.style.transformOrigin = "center center";
 
-});
+            techCube.style.transform =
+                `rotateX(${rotationX}deg) rotateY(${rotationY * direction}deg)`;
+
+        });
 
         requestAnimationFrame(animateCube);
     }
@@ -713,3 +718,4 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(animateCube);
 
 });
+

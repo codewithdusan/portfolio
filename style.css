@@ -3266,3 +3266,72 @@ html[data-theme="light"] .loader-logo {
 .tech-cube-container.tech-cube-bottom {
     top: calc(50% + 110px) !important;
 }
+/* =================================
+   MOBILE - SCROLL BAR AND 3D CUBES
+================================= */
+
+@media (max-width: 600px) {
+
+    /* Obe kocke */
+    .tech-cube-container {
+    width: 28px !important;
+    height: 28px !important;
+    left: -8px !important;
+    right: auto !important;
+
+    display: block;
+    perspective: 1000px;
+}
+
+.tech-cube {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+    /* Gornja kocka */
+    .tech-cube-container:not(.tech-cube-bottom) {
+        top: calc(50% - 100px) !important;
+    }
+
+    /* Donja kocka */
+    .tech-cube-container.tech-cube-bottom {
+        top: calc(50% + 60px) !important;
+    }
+
+    /* Strane kocki */
+    .cube-face {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .cube-face.front {
+        transform: translateZ(7px);
+    }
+
+    .cube-face.back {
+        transform: rotateY(180deg) translateZ(7px);
+    }
+
+    .cube-face.right {
+        transform: rotateY(90deg) translateZ(7px);
+    }
+
+    .cube-face.left {
+        transform: rotateY(-90deg) translateZ(7px);
+    }
+
+    .cube-face.top {
+        transform: rotateX(90deg) translateZ(7px);
+    }
+
+    .cube-face.bottom {
+        transform: rotateX(-90deg) translateZ(7px);
+    }
+
+}
