@@ -574,3 +574,142 @@ function moveNavbarControls() {
 moveNavbarControls();
 
 mobileBreakpoint.addEventListener("change", moveNavbarControls);
+
+// FLOATING CHAT WIDGET
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const chatToggle = document.getElementById("chatToggle");
+    const chatWindow = document.getElementById("chatWindow");
+    const chatClose = document.getElementById("chatClose");
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
+    const chatTexts = document.querySelectorAll(".chat-window [data-en]");
+
+    // Provera HTML elemenata
+    if (!chatToggle || !chatWindow || !chatClose || !chatForm || !chatInput) {
+        console.error("Chat widget: HTML elements not found.");
+        return;
+    }
+    function updateChatLanguage(language) {
+
+    chatTexts.forEach(element => {
+        element.textContent = element.dataset[language];
+    });
+
+    chatInput.placeholder =
+        chatInput.dataset[language + "Placeholder"];
+
+    const sendButton = chatForm.querySelector("button");
+
+    sendButton.setAttribute(
+        "aria-label",
+        sendButton.dataset[language + "Label"]
+    );
+    }
+
+// Primeni trenutno izabrani jezik
+    updateChatLanguage(currentLanguage);
+
+    // Otvaranje i zatvaranje chata
+    chatToggle.addEventListener("click", function () {
+        const isOpen = chatWindow.classList.toggle("active");
+
+        chatToggle.classList.toggle("active", isOpen);
+    });
+
+    // Zatvaranje preko X dugmeta
+    chatClose.addEventListener("click", function () {
+        chatWindow.classList.remove("active");
+        chatToggle.classList.remove("active");
+    });
+
+    // Slanje poruke na WhatsApp
+    chatForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const message = chatInput.value.trim();
+
+        if (!message) return;
+
+        const whatsappNumber = "381603530746";
+
+        const whatsappURL =
+            "https://wa.me/" + whatsappNumber +
+            "?text=" + encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+
+        chatInput.value = "";
+    });
+
+});
+
+// =================================
+// 3D CUBE - SCROLL ANIMATION
+// =================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const techCubes = document.querySelectorAll(".tech-cube");
+
+    if (!techCubes.length) return;
+
+    let rotationX = -25;
+    let rotationY = 25;
+
+    let currentBoost = 0;
+    let targetBoost = 0;
+
+    let lastScrollY = window.scrollY;
+    let lastFrameTime = performance.now();
+
+    // Reagovanje na skrolovanje
+    window.addEventListener("scroll", function () {
+
+        const currentScrollY = window.scrollY;
+        const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+
+        targetBoost = Math.min(scrollDifference * 0.8, 25);
+
+        lastScrollY = currentScrollY;
+
+    }, { passive: true });
+
+    // Animacija kocke
+    function animateCube(timestamp) {
+
+        const deltaTime = Math.min(
+            (timestamp - lastFrameTime) / 1000,
+            0.05
+        );
+
+        lastFrameTime = timestamp;
+
+        // Postepeno ubrzavanje i usporavanje
+        currentBoost += (targetBoost - currentBoost) * 0.08;
+
+        targetBoost *= 0.94;
+
+        // Osnovna brzina + dodatna brzina tokom skrolovanja
+        const speedX = 12 + currentBoost;
+        const speedY = 20 + currentBoost * 1.5;
+
+        rotationX += speedX * deltaTime;
+        rotationY += speedY * deltaTime;
+
+        techCubes.forEach((techCube, index) => {
+
+    const direction = index === 0 ? 1 : -1;
+
+    techCube.style.transform =
+        `rotateX(${rotationX}deg) rotateY(${rotationY * direction}deg)`;
+
+});
+
+        requestAnimationFrame(animateCube);
+    }
+
+    requestAnimationFrame(animateCube);
+
+});

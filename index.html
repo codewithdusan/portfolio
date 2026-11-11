@@ -192,6 +192,8 @@
 
     </div>
 
+
+
     <div class="hero-decoration">DR</div>
 </article>
         
@@ -1101,5 +1103,90 @@ I am genuinely passionate about software development and see it as a lifelong ca
 
     <script src="script.js"></script>
     <div class="custom-cursor"></div>
+
+<!-- FLOATING CHAT WIDGET -->
+<div class="floating-chat">
+
+    <div class="chat-window" id="chatWindow">
+
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">DR</div>
+                <div>
+                    <h3 data-en="Let's talk" data-sr="Hajde da razgovaramo">Let's talk</h3>
+                        <span data-en="Available for opportunities"
+                            data-sr="Otvoren za poslovne prilike">
+                        Available for opportunities
+                        </span>
+                </div>
+            </div>
+
+            <button class="chat-close" id="chatClose" aria-label="Close chat">
+                &times;
+            </button>
+        </div>
+
+        <div class="chat-body">
+            <div class="chat-message"
+                data-en="Hey! 👋 Thanks for visiting my portfolio. How can I help you?"
+                data-sr="Zdravo! 👋 Hvala ti što posećuješ moj portfolio. Kako mogu da ti pomognem?">
+                                Hey! 👋 Thanks for visiting my portfolio. How can I help you?
+            </div>
+        </div>
+
+        <form class="chat-input-area" id="chatForm">
+            <input
+                type="text"
+             id="chatInput"
+             placeholder="Type your message..."
+              data-en-placeholder="Type your message..."
+             data-sr-placeholder="Unesi svoju poruku..."
+              autocomplete="off"
+                     required
+            >
+            <button type="submit" aria-label="Send message"
+                data-en-label="Send message"
+                data-sr-label="Pošalji poruku">
+                ➤
+            </button>
+        </form>
+
+    </div>
+
+    <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
+                     8.5 8.5 0 0 1-7.6 4.7
+                     8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7
+                     a8.4 8.4 0 0 1-.9-3.8
+                     8.5 8.5 0 0 1 4.7-7.6
+                     8.4 8.4 0 0 1 3.8-.9h.5
+                     a8.5 8.5 0 0 1 8 8v.5Z"/>
+        </svg>
+    </button>
+
+</div>
+<div class="tech-cube-container" id="techCube">
+    <div class="tech-cube">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+    </div>
+</div>
+<div class="tech-cube-container tech-cube-bottom">
+    <div class="tech-cube">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+    </div>
+</div>
 </body>
 </html>
