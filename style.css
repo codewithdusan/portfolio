@@ -3422,6 +3422,454 @@ html[data-theme="light"] .chat-window button {
     color: #222222 !important;
 }
 
+
 html[data-theme="light"] .chat-close {
     color: #222222 !important;
+}
+
+/* =========================================
+   GITHUB ACTIVITY
+========================================= */
+
+.github-activity {
+    grid-column: 1 / -1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HEADER */
+
+.github-activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.github-activity-header h2 {
+    margin-top: 8px;
+}
+
+.github-activity-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 27px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.github-activity-header a:hover {
+    transform: scale(1.15);
+    color: var(--red-light);
+}
+
+
+/* =========================================
+   GITHUB STATISTICS
+========================================= */
+
+.github-stats {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* MAIN CONTRIBUTION COUNT */
+
+.github-main-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.github-total {
+    display: block;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--red);
+    letter-spacing: -1px;
+}
+
+.github-total-label {
+    display: block;
+    margin-top: 6px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* EXTRA STATISTICS */
+
+.github-extra-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.github-extra-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 75px;
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.github-extra-stat:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 38, 56, 0.35);
+    background: rgba(255, 38, 56, 0.04);
+}
+
+.github-extra-value {
+    color: var(--red);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.github-extra-stat > span:last-child {
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.github-activity-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.github-last-updated {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+#githubLastUpdated {
+    color: var(--red);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+/* LIGHT MODE */
+
+html[data-theme="light"] .github-extra-stat {
+    background: rgba(0, 0, 0, 0.025);
+    border-color: rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme="light"] .github-extra-stat:hover {
+    background: rgba(255, 38, 56, 0.04);
+    border-color: rgba(255, 38, 56, 0.3);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .github-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .github-total {
+        font-size: 36px;
+    }
+
+    .github-extra-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    }
+
+    .github-extra-stat {
+        min-height: 70px;
+        padding: 9px;
+    }
+
+    .github-extra-value {
+        font-size: 19px;
+    }
+
+    .github-extra-stat > span:last-child {
+        font-size: 9px;
+    }
+    .github-activity-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* CHART CONTAINER */
+
+.github-chart {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: end;
+    gap: 12px;
+    width: 100%;
+    height: 170px;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+
+/* EACH DAY */
+
+.github-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    min-width: 0;
+    gap: 8px;
+}
+
+/* CONTRIBUTION NUMBER */
+
+.github-bar-count {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+/* BAR */
+
+.github-bar {
+    width: 65%;
+    max-width: 35px;
+    min-height: 3px;
+    border-radius: 5px 5px 0 0;
+
+    background: var(--red);
+
+    box-shadow:
+        0 0 10px rgba(255, 38, 56, 0.15);
+
+    transition:
+        height 0.4s ease,
+        filter 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.github-bar:hover {
+    filter: brightness(1.3);
+
+    box-shadow:
+        0 0 15px rgba(255, 38, 56, 0.4);
+}
+
+/* DAY NAME */
+
+.github-bar-date {
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* FOOTER */
+
+.github-activity-footer {
+    margin-top: 18px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* ANIMATION */
+
+@keyframes githubFadeIn {
+    from {
+        opacity: 0;
+        transform: scaleY(0.2);
+        transform-origin: bottom;
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+}
+
+/* LIGHT MODE */
+
+html[data-theme="light"] .github-bar {
+    background: #e52639;
+
+    box-shadow:
+        0 0 8px rgba(255, 38, 56, 0.12);
+}
+
+html[data-theme="light"] .github-bar-count {
+    color: #222222;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .github-activity-header {
+        margin-bottom: 20px;
+    }
+
+    .github-total {
+        font-size: 32px;
+    }
+
+    .github-chart {
+        gap: 5px;
+        height: 150px;
+        padding: 8px 0;
+    }
+
+    .github-bar-item {
+        gap: 7px;
+    }
+
+    .github-bar {
+        width: 70%;
+        max-width: 25px;
+    }
+
+    .github-bar-count {
+        font-size: 10px;
+    }
+
+    .github-bar-date {
+        font-size: 9px;
+    }
+
+    .github-activity-footer {
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   GITHUB CHART TOOLTIP
+========================================= */
+
+.github-bar-item {
+    position: relative;
+}
+
+.github-tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, 5px);
+
+    width: max-content;
+    max-width: 180px;
+    padding: 8px 11px;
+
+    background: #1c1c1c;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    border: 1px solid rgba(255, 38, 56, 0.35);
+    border-radius: 7px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 10;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.github-bar-item:hover .github-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* LIGHT MODE */
+
+html[data-theme="light"] .github-tooltip {
+    background: #ffffff;
+    color: #222222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* MOBILE - TOUCH */
+
+@media (hover: none) {
+    .github-tooltip {
+        display: none;
+    }
+}
+/* GITHUB LIVE DATA */
+
+.github-live {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+    animation: livePulse 1.5s infinite;
+}
+
+.live-text {
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.github-live a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.github-live a:hover {
+    transform: scale(1.15);
+}
+
+@keyframes livePulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: scale(0.8);
+    }
 }

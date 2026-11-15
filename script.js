@@ -1,15 +1,3 @@
-
-// =========================
-// EFEKAT KUCANJA TEKSTA
-// =========================
-// =========================
-// TYPING EFFECT
-// =========================
-
-// =========================
-// TYPING EFFECT
-// =========================
-
 const words = {
     en: [
         "Junior .NET Developer",
@@ -106,6 +94,9 @@ const downloadCV = document.getElementById("downloadCV");
     document.documentElement.lang = language;
 
     localStorage.setItem("siteLanguage", language);
+if (typeof updateGithubChartLanguage === "function") {
+    updateGithubChartLanguage();
+}    
 }
 
 languageToggle.addEventListener("click", () => {
@@ -719,3 +710,291 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+// =========================================
+// GITHUB ACTIVITY - LAST 7 DAYS
+// =========================================
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const githubTotal = document.getElementById("githubTotal");
+    const githubChart = document.getElementById("githubChart");
+
+    // Provera da li GitHub kartica postoji
+    if (!githubTotal || !githubChart) return;
+
+    const username = "codewithdusan";
+
+    try {
+
+        // Preuzimanje GitHub aktivnosti
+        const response = await fetch(
+            `https://github-contributions-api.jogruber.de/v4/${username}?y=last`
+        );
+
+        if (!response.ok) {
+            throw new Error("GitHub API error");
+        }
+
+        const data = await response.json();
+
+        if (!data.contributions) {
+            throw new Error("No contribution data");
+        }
+
+        // Čuvanje doprinosa po datumima
+        const contributionsMap = new Map(
+            data.contributions.map(day => [
+                day.date,
+                day.count
+            ])
+        );
+
+        // Poslednjih 7 dana
+        const days = [];
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        for (let i = 6; i >= 0; i--) {
+
+            const date = new Date(today);
+            date.setDate(today.getDate() - i);
+
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+
+            const dateKey = `${year}-${month}-${day}`;
+
+            days.push({
+                date: dateKey,
+                count: contributionsMap.get(dateKey) || 0
+            });
+        }
+        // CURRENT STREAK
+
+function formatDateKey(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
+let streakDate = new Date(today);
+
+// Ako danas nema doprinosa, proveravamo od juče
+if ((contributionsMap.get(formatDateKey(streakDate)) || 0) === 0) {
+    streakDate.setDate(streakDate.getDate() - 1);
+}
+
+let currentStreak = 0;
+
+while (true) {
+    const dateKey = formatDateKey(streakDate);
+    const count = contributionsMap.get(dateKey) || 0;
+
+    if (count === 0) break;
+
+    currentStreak++;
+
+    streakDate.setDate(streakDate.getDate() - 1);
+}
+
+document.getElementById("githubStreak").textContent = currentStreak;
+// LAST UPDATED
+
+// LAST UPDATED
+
+const lastUpdated = new Date();
+
+document.getElementById("githubLastUpdated").textContent =
+    lastUpdated.toLocaleString(
+        document.documentElement.lang === "sr" ? "sr-RS" : "en-GB",
+        {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hourCycle: "h23"
+        }
+    );
+        // Ukupan broj doprinosa
+        const total = days.reduce(
+            (sum, day) => sum + day.count,
+            0
+        );
+
+        githubTotal.textContent = total;
+
+        // =========================================
+        // DODATNE GITHUB STATISTIKE
+        // ========================================
+        // Broj aktivnih dana
+            const activeDays = days.filter(
+                day => day.count > 0
+            ).length;
+
+            document.getElementById("githubActiveDays").textContent = activeDays;
+
+            // Najaktivniji dan
+            const bestDay = Math.max(
+                ...days.map(day => day.count)
+            );
+
+            document.getElementById("githubBestDay").textContent = bestDay;
+
+// Dnevni prosek
+const average = (total / 7).toFixed(1);
+
+document.getElementById("githubAverage").textContent = average;
+
+        // Kreiranje grafikona
+        githubChart.innerHTML = "";
+
+        const maxCount = Math.max(
+            ...days.map(day => day.count),
+            1
+        );
+
+        // Nazivi dana
+        const dayNames = [
+            "Sun", "Mon", "Tue", "Wed",
+            "Thu", "Fri", "Sat"
+        ];
+
+        const dayNamesSR = [
+            "Ned", "Pon", "Uto", "Sre",
+            "Čet", "Pet", "Sub"
+        ];
+
+        // Kreiranje stubića
+        days.forEach((day, index) => {
+
+            const item = document.createElement("div");
+            item.className = "github-bar-item";
+
+            // Čuvamo datum da bismo mogli da menjamo jezik
+            item.dataset.date = day.date;
+
+            // Broj doprinosa
+            const count = document.createElement("span");
+            count.className = "github-bar-count";
+            count.textContent = day.count;
+
+            // Stubić
+            const bar = document.createElement("div");
+            bar.className = "github-bar";
+
+            const height = day.count === 0
+                ? 3
+                : Math.max(8, (day.count / maxCount) * 100);
+
+            bar.style.height = `${height}px`;
+            bar.style.animation = "githubFadeIn 0.5s ease both";
+            bar.style.animationDelay = `${index * 80}ms`;
+
+            // Naziv dana
+            const dateLabel = document.createElement("span");
+            dateLabel.className = "github-bar-date";
+
+            const weekday = new Date(
+                day.date + "T12:00:00"
+            ).getDay();
+
+           const jezik = document.documentElement.lang;
+
+                dateLabel.textContent =
+                    jezik === "sr"
+                    ? dayNamesSR[weekday]
+                    : dayNames[weekday];
+      // Tooltip
+                const tooltip = document.createElement("div");
+                tooltip.className = "github-tooltip";
+
+                const formattedDate = new Date(
+                        day.date + "T12:00:00"
+                    ).toLocaleDateString(
+            currentLanguage === "sr" ? "sr-RS" : "en-US",
+                    {
+                        day: "numeric",
+                        month: "short"
+                    }
+);
+
+tooltip.textContent =
+    `${formattedDate} · ${day.count} ` +
+    (currentLanguage === "sr" ? "doprinosa" : "contributions");
+
+item.appendChild(tooltip);
+            // Dodavanje elemenata
+            item.appendChild(count);
+            item.appendChild(bar);
+            item.appendChild(dateLabel);
+
+            githubChart.appendChild(item);
+        });
+
+    } catch (error) {
+
+        console.error("GitHub activity error:", error);
+
+        githubTotal.textContent = "—";
+
+        githubChart.textContent =
+            "GitHub activity is currently unavailable.";
+    }
+
+});
+
+// =========================================
+// GITHUB CHART LANGUAGE
+// =========================================
+
+function updateGithubChartLanguage() {
+
+    const days = document.querySelectorAll(".github-bar-item");
+
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const dayNamesSR = ["Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub"];
+
+    days.forEach(item => {
+
+        const dateLabel = item.querySelector(".github-bar-date");
+
+        if (!dateLabel) return;
+
+        const date = item.dataset.date;
+
+        if (!date) return;
+
+        const weekday = new Date(date + "T12:00:00").getDay();
+
+        dateLabel.textContent =
+            currentLanguage === "sr"
+                ? dayNamesSR[weekday]
+                : dayNames[weekday];
+        const tooltip = item.querySelector(".github-tooltip");
+
+if (tooltip) {
+    const formattedDate = new Date(
+        date + "T12:00:00"
+    ).toLocaleDateString(
+        currentLanguage === "sr" ? "sr-RS" : "en-US",
+        {
+            day: "numeric",
+            month: "short"
+        }
+    );
+
+    const count = item.querySelector(".github-bar-count").textContent;
+
+    tooltip.textContent =
+        `${formattedDate} · ${count} ` +
+        (currentLanguage === "sr" ? "doprinosa" : "contributions");
+}        
+
+    });
+}
